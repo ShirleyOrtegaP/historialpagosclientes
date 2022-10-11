@@ -14,13 +14,14 @@ function App() {
     setTexto(target.value)
   }
 
-  const peticionGet = async() => {
+  const peticionGet = async() => {    
     await axios.get(baseUrl)
     .then(response=>{
       setData(response.data);
     }).catch(error=>{
       console.log(error);
     })
+
   }
 
   const peticionGetId = async() => {
@@ -31,6 +32,7 @@ function App() {
     }).catch(error=>{
       console.log(error);
     })
+    setTexto('');
   }
 
   useEffect(()=>{
